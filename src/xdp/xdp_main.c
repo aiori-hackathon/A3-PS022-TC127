@@ -1,12 +1,15 @@
+
 #include<linux/bpf.h>
 #include<linux/if_ether.h>
 #include<bpf/bpf_helpers.h>
 #include <linux/ip.h>
 #include <linux/udp.h>
 #include <bpf/bpf_endian.h>
+#include<linux/errno.h>
 
 #define IPV4_MF       0x2000
 #define IPV4_OFFMASK  0x1FFF
+#define MAX_SOURCE    1024
 
 #ifdef DEBUG
 #define DEBUG_PRINT(fmt, ...) bpf_printk(fmt, ##__VA_ARGS__)
@@ -23,8 +26,49 @@ struct dns_hdr {
     __be16 arcount;
 } __attribute__((packed));
 
+struct source_map_key {
+    __u32 saddr;
+};
+
+struct source_map_value {
+    __u64 tat_ns;
+    __u64 packet_seen;
+};
+
+enum {
+    DNS_QUERIES,
+    SOURCE_HIT,
+    SOURCE_INSERT,
+    INSERT_RACE,
+    MAP_ERROR,
+    STAT_COUNT
+};
+
+struct {
+    __uint(type, BPF_MAP_TYPE_LRU_HASH);
+    __uint(max_entries, MAX_SOURCE);
+    __type(key, struct source_map_key);
+    __type(value, struct source_map_value);
+} source_map SEC(".maps");
+
+struct {
+    __uint(type, BPF_MAP_TYPE_PERCPU_ARRAY);
+    __uint(max_entries, STAT_COUNT);
+    __type(key, __u32);
+    __type(value, __u64);
+} stat_map SEC(".maps");
+
+static __always_inline void count_stat(__u32 id) {
+    __u64 *stat_value = bpf_map_lookup_elem(&stat_map, &id);
+    if (stat_value) {
+        (*stat_value)++;
+    }
+    return ;
+}
+
 SEC("xdp")
 int xdp_main(struct xdp_md *ctx){
+    long ret;
     void *data = (void *)(long)ctx->data;
     void *data_end = (void *)(long)ctx->data_end;
 
@@ -69,7 +113,6 @@ int xdp_main(struct xdp_md *ctx){
     }
     if (ip_len - hdr_len < sizeof(struct udphdr))
         return XDP_PASS;
-    
     struct udphdr *udp = (struct udphdr*)((char *)(ip) + hdr_len);
     if ((void *)(udp +1) > data_end) {
         DEBUG_PRINT("invalid lenght udphdr");
@@ -110,6 +153,37 @@ int xdp_main(struct xdp_md *ctx){
         return XDP_PASS;
     }
     DEBUG_PRINT("DNS querry identified");
+    count_stat(DNS_QUERIES);
+    struct source_map_key key = {
+        .saddr = ip->saddr
+    };
+    struct source_map_value *value = bpf_map_lookup_elem(&source_map, &key);
+    if (value) {
+        count_stat(SOURCE_HIT);
+        __sync_add_and_fetch(&value->packet_seen, 1);
+    }
+    else {
+        struct source_map_value new_value = {
+            .packet_seen = 1,
+            .tat_ns = 0
+        };
+        ret = bpf_map_update_elem(&source_map, &key, &new_value, BPF_NOEXIST);
+        if (ret == 0) {
+            count_stat(SOURCE_INSERT);
+        }
+        else if (ret == -EEXIST) {
+            count_stat(INSERT_RACE);
+            value = bpf_map_lookup_elem(&source_map, &key);
+            if (value) {
+                __sync_add_and_fetch(&value->packet_seen, 1);
+            }
+        }
+        else if (ret != 0) {
+            DEBUG_PRINT("ERROR in updating source map");
+            count_stat(MAP_ERROR);
+            return XDP_PASS;
+        }
+    }
     return XDP_PASS;
 }
 
