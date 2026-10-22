@@ -1,4 +1,3 @@
-
 #include<linux/bpf.h>
 #include<linux/if_ether.h>
 #include<bpf/bpf_helpers.h>
@@ -26,14 +25,7 @@ struct dns_hdr {
     __be16 arcount;
 } __attribute__((packed));
 
-struct source_map_key {
-    __u32 saddr;
-};
-
-struct source_map_value {
-    __u64 tat_ns;
-    __u64 packet_seen;
-};
+#include"gcra.h"
 
 enum {
     DNS_QUERIES,
