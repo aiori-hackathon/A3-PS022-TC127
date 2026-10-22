@@ -9,7 +9,7 @@ all: $(BPF_OBJ)
 
 $(BPF_OBJ): $(BPF_SRC)
 	@mkdir -p $(@D)
-	$(CLANG) -O2 -g -target bpf -c $< -o $@ 
+	$(CLANG) -O2 -g -DDEBUG -target bpf -c $< -o $@
 
 clean: 
 	rm -rf build
