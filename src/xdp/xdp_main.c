@@ -26,6 +26,7 @@ struct dns_hdr {
 } __attribute__((packed));
 
 #include"gcra.h"
+#include"global_bucket.h"
 
 enum {
     DNS_QUERIES,
@@ -33,6 +34,7 @@ enum {
     SOURCE_INSERT,
     INSERT_RACE,
     MAP_ERROR,
+    PACKET_DROP,
     STAT_COUNT
 };
 
@@ -152,13 +154,36 @@ int xdp_main(struct xdp_md *ctx){
     struct source_map_value *value = bpf_map_lookup_elem(&source_map, &key);
     if (value) {
         count_stat(SOURCE_HIT);
+        __u64 now = bpf_ktime_get_ns();
+        int ret = source_eligible(value, now);
+        if (ret != SOURCE_SUCCESS) {
+            count_stat(PACKET_DROP);
+            return XDP_DROP;
+        }
+        ret = global_reserve(now);
+        if (ret != G_SUCCESS) {
+            count_stat(PACKET_DROP);
+            return XDP_DROP;
+        }
+        ret = source_commit(value, now);
+        if (ret != SOURCE_SUCCESS) {
+            global_refund();
+            count_stat(PACKET_DROP);
+            return XDP_DROP;
+        }
         __sync_add_and_fetch(&value->packet_seen, 1);
     }
     else {
+        __u64 now = bpf_ktime_get_ns();
         struct source_map_value new_value = {
             .packet_seen = 1,
-            .tat_ns = 0
+            .tat_ns = now + INTERVAL_NS
         };
+        int ret = global_reserve(now);
+        if (ret != G_SUCCESS) {
+            count_stat(PACKET_DROP);
+            return XDP_DROP;
+        }
         ret = bpf_map_update_elem(&source_map, &key, &new_value, BPF_NOEXIST);
         if (ret == 0) {
             count_stat(SOURCE_INSERT);
@@ -166,14 +191,26 @@ int xdp_main(struct xdp_md *ctx){
         else if (ret == -EEXIST) {
             count_stat(INSERT_RACE);
             value = bpf_map_lookup_elem(&source_map, &key);
-            if (value) {
-                __sync_add_and_fetch(&value->packet_seen, 1);
+            if (!value) {
+                global_refund();
+                count_stat(MAP_ERROR);
+                count_stat(PACKET_DROP);
+                return XDP_DROP;
             }
+            ret = source_commit(value, now);
+            if (ret != SOURCE_SUCCESS) {
+                global_refund();
+                count_stat(PACKET_DROP);
+                return XDP_DROP;
+            }    
+            __sync_add_and_fetch(&value->packet_seen, 1);
         }
         else if (ret != 0) {
             DEBUG_PRINT("ERROR in updating source map");
+            global_refund();
             count_stat(MAP_ERROR);
-            return XDP_PASS;
+            count_stat(PACKET_DROP);
+            return XDP_DROP;
         }
     }
     return XDP_PASS;
