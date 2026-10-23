@@ -14,6 +14,16 @@ struct source_map_value {
     __u64 packet_seen;
 };
 
+static __always_inline __u64 source_read_tat(
+    const struct source_map_value *src)
+{
+#ifdef __BPF__
+    return *(const volatile __u64 *)&src->tat_ns;
+#else
+    return __atomic_load_n(&src->tat_ns, __ATOMIC_RELAXED);
+#endif
+}
+
 #define NS_PER_SEC 1000000000ULL
 
 #define SOURCE_RATE 100ULL
@@ -30,7 +40,7 @@ struct source_map_value {
 static __always_inline int source_eligible(
     struct source_map_value *src, __u64 now)
 {
-    __u64 tat = __atomic_load_n(&src->tat_ns, __ATOMIC_RELAXED);
+    __u64 tat = source_read_tat(src);
 
     if (tat <= now || (tat - now) <= TAU_NS) {
         return SOURCE_SUCCESS;
@@ -45,7 +55,7 @@ static __always_inline int source_commit(
 //at the cost of slightly larger binary
 
     for (int attempt = 0; attempt < 4; attempt++) {
-        __u64 old = __atomic_load_n(&src->tat_ns, __ATOMIC_RELAXED);
+        __u64 old = source_read_tat(src);
         int ret;
 
         if (old > now && (old - now) > TAU_NS) {
