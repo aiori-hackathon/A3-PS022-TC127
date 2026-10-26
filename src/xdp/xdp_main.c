@@ -1,11 +1,14 @@
-#include<linux/bpf.h>
-#include<linux/if_ether.h>
-#include<bpf/bpf_helpers.h>
+#include <linux/bpf.h>
+#include <linux/if_ether.h>
+#include <bpf/bpf_helpers.h>
 #include <linux/ip.h>
 #include <linux/udp.h>
 #include <bpf/bpf_endian.h>
-#include<linux/errno.h>
+#include <linux/errno.h>
 
+/* -------------------------------------------------------------------------
+ * Configuration and test/debug hooks
+ * ------------------------------------------------------------------------- */
 #define IPV4_MF       0x2000
 #define IPV4_OFFMASK  0x1FFF
 #define MAX_SOURCE    1024
@@ -23,6 +26,7 @@
 #define DEBUG_PRINT(fmt, ...) do {} while (0)
 #endif
 
+/* Only the fixed 12-byte DNS header is needed by the current parser. */
 struct dns_hdr {
     __be16 id;
     __be16 flags;
@@ -32,12 +36,21 @@ struct dns_hdr {
     __be16 arcount;
 } __attribute__((packed));
 
-#include"gcra.h"
-#include"global_bucket.h"
+#include "gcra.h"
+#include "global_bucket.h"
 
 #ifdef BYTEGUARD_TEST
 #include "../tests/core/test_hooks.bpf.h"
 #endif
+
+/* -------------------------------------------------------------------------
+ * Statistics
+ *
+ * Keep existing numeric IDs (0..5) unchanged for tests and exporters.
+ * DNS_QUERIES = DNS_PASS + PACKET_DROP for packets reaching admission.
+ * SOURCE_HIT / SOURCE_INSERT / INSERT_RACE / MAP_ERROR are event counts,
+ * not additional final packet outcomes.
+ * ------------------------------------------------------------------------- */
 enum {
     DNS_QUERIES,
     SOURCE_HIT,
@@ -45,9 +58,18 @@ enum {
     INSERT_RACE,
     MAP_ERROR,
     PACKET_DROP,
+    DNS_PASS,
+    DROP_SOURCE_LIMIT,
+    DROP_GLOBAL_LIMIT,
+    DROP_SOURCE_COMMIT,
+    DROP_INTERNAL_ERROR,
+    GLOBAL_REFUND,  /* Number of refund calls, not confirmed refund success. */
     STAT_COUNT
 };
 
+/* -------------------------------------------------------------------------
+ * Maps
+ * ------------------------------------------------------------------------- */
 struct {
     __uint(type, BPF_MAP_TYPE_LRU_HASH);
     __uint(max_entries, MAX_SOURCE);
@@ -55,6 +77,7 @@ struct {
     __type(value, struct source_map_value);
 } source_map SEC(".maps");
 
+/* A per-CPU array avoids contention when incrementing stats. */
 struct {
     __uint(type, BPF_MAP_TYPE_PERCPU_ARRAY);
     __uint(max_entries, STAT_COUNT);
@@ -62,22 +85,42 @@ struct {
     __type(value, __u64);
 } stat_map SEC(".maps");
 
-static __always_inline void count_stat(__u32 id) {
+static __always_inline void count_stat(__u32 id)
+{
     __u64 *stat_value = bpf_map_lookup_elem(&stat_map, &id);
     if (stat_value) {
         (*stat_value)++;
     }
-    return ;
 }
 
+/* Every admission-path drop increments exactly one reason + total drops. */
+static __always_inline int drop_dns(__u32 reason)
+{
+    count_stat(reason);
+    count_stat(PACKET_DROP);
+    return XDP_DROP;
+}
+
+/* -------------------------------------------------------------------------
+ * Main packet path
+ *
+ * 1. Parse enough Ethernet/IPv4/UDP/DNS to recognize standard DNS queries.
+ * 2. Apply per-source GCRA + global bucket with existing/new-source ordering.
+ * 3. Record one final DNS outcome (admitted or dropped).
+ *
+ * Early XDP_PASS returns are unchanged: those packets never enter the DNS
+ * admission path and are NOT counted in DNS_QUERIES or DNS_PASS.
+ * ------------------------------------------------------------------------- */
 SEC("xdp")
-int xdp_main(struct xdp_md *ctx){
+int xdp_main(struct xdp_md *ctx)
+{
     long ret;
     void *data = (void *)(long)ctx->data;
     void *data_end = (void *)(long)ctx->data_end;
 
+    /* ---- Ethernet header ------------------------------------------------ */
     struct ethhdr *eth = data;
-    if ((void *)(eth +1) > data_end) {
+    if ((void *)(eth + 1) > data_end) {
         DEBUG_PRINT("invalid lenght of ethernet hdr");
         return XDP_PASS;
     }
@@ -85,8 +128,10 @@ int xdp_main(struct xdp_md *ctx){
         DEBUG_PRINT("NOT AN ip papcket");
         return XDP_PASS;
     }
-    struct iphdr *ip = (struct iphdr*)(void *)(eth+1);
-    if((void *)(ip+1) > data_end) {
+
+    /* ---- IPv4 header / length / fragmentation checks ------------------- */
+    struct iphdr *ip = (struct iphdr *)(void *)(eth + 1);
+    if ((void *)(ip + 1) > data_end) {
         DEBUG_PRINT("invalid lenght ipphdr");
         return XDP_PASS;
     }
@@ -96,18 +141,18 @@ int xdp_main(struct xdp_md *ctx){
     int ihl = ip->ihl;
     __u16 ip_len = bpf_ntohs(ip->tot_len);
     __u32 hdr_len = ihl * 4;
-    if (ip_len < hdr_len) 
+    if (ip_len < hdr_len)
         return XDP_PASS;
-    if(ihl < 5 || (void *)((char *)(ip) + hdr_len) > data_end) {
+    if (ihl < 5 || (void *)((char *)ip + hdr_len) > data_end) {
         DEBUG_PRINT("invalid length of iphdr after ihl check");
         return XDP_PASS;
     }
     void *ip_end = (void *)((char *)ip + ip_len);
     if (ip_end > data_end)
         return XDP_PASS;
-    __u16 frag = bpf_ntohs(ip->frag_off);
 
-    if (frag & (IPV4_MF | IPV4_OFFMASK)) { //Fragmented packet
+    __u16 frag = bpf_ntohs(ip->frag_off);
+    if (frag & (IPV4_MF | IPV4_OFFMASK)) { /* Fragmented packet */
         DEBUG_PRINT("Fragment packet");
         return XDP_PASS;
     }
@@ -115,10 +160,12 @@ int xdp_main(struct xdp_md *ctx){
         DEBUG_PRINT("NOT an udp packet");
         return XDP_PASS;
     }
+
+    /* ---- UDP header / DNS destination port ----------------------------- */
     if (ip_len - hdr_len < sizeof(struct udphdr))
         return XDP_PASS;
-    struct udphdr *udp = (struct udphdr*)((char *)(ip) + hdr_len);
-    if ((void *)(udp +1) > data_end) {
+    struct udphdr *udp = (struct udphdr *)((char *)ip + hdr_len);
+    if ((void *)(udp + 1) > data_end) {
         DEBUG_PRINT("invalid lenght udphdr");
         return XDP_PASS;
     }
@@ -128,11 +175,14 @@ int xdp_main(struct xdp_md *ctx){
         return XDP_PASS;
     }
     DEBUG_PRINT("UDP packet arrived");
+
     __u16 dest_port = udp->dest;
     if (dest_port != bpf_htons(53)) {
         DEBUG_PRINT("not dns packet");
         return XDP_PASS;
     }
+
+    /* ---- Minimal DNS header validation --------------------------------- */
     if (udp_len < sizeof(struct udphdr) + sizeof(struct dns_hdr)) {
         DEBUG_PRINT("DNS header too short");
         return XDP_PASS;
@@ -156,80 +206,96 @@ int xdp_main(struct xdp_md *ctx){
         DEBUG_PRINT("DNS queery without question");
         return XDP_PASS;
     }
+
+    /* From here on, every return is a DNS admission outcome. */
     DEBUG_PRINT("DNS querry identified");
     count_stat(DNS_QUERIES);
+
     struct source_map_key key = {
         .saddr = ip->saddr
     };
     struct source_map_value *value = bpf_map_lookup_elem(&source_map, &key);
+
     if (value) {
+        /* ---- Existing source --------------------------------------------
+         * Read-only source check -> reserve global -> CAS source commit.
+         * Any failed commit must refund the already-reserved global token.
+         * --------------------------------------------------------------- */
         count_stat(SOURCE_HIT);
         __u64 now = BG_NOW_NS();
         int ret = source_eligible(value, now);
         if (ret != SOURCE_SUCCESS) {
-            count_stat(PACKET_DROP);
-            return XDP_DROP;
+            return drop_dns(DROP_SOURCE_LIMIT);
         }
+
         ret = global_reserve(now);
         if (ret != G_SUCCESS) {
-            count_stat(PACKET_DROP);
-            return XDP_DROP;
+            return drop_dns(DROP_GLOBAL_LIMIT);
         }
-        #ifdef BYTEGUARD_TEST
+
+#ifdef BYTEGUARD_TEST
         bg_test_before_source_commit(value, now);
 #endif
         ret = source_commit(value, now);
         if (ret != SOURCE_SUCCESS) {
             global_refund();
-            count_stat(PACKET_DROP);
-            return XDP_DROP;
+            count_stat(GLOBAL_REFUND);
+            return drop_dns(DROP_SOURCE_COMMIT);
         }
         __sync_add_and_fetch(&value->packet_seen, 1);
-    }
-    else {
+    } else {
+        /* ---- New source -------------------------------------------------
+         * Reserve global FIRST -> BPF_NOEXIST insert source.
+         * If another CPU inserted the source, re-lookup and CAS commit.
+         * Refund the token for all terminal failure paths.
+         * --------------------------------------------------------------- */
         __u64 now = BG_NOW_NS();
         struct source_map_value new_value = {
             .packet_seen = 1,
             .tat_ns = now + INTERVAL_NS
         };
+
         int ret = global_reserve(now);
         if (ret != G_SUCCESS) {
-            count_stat(PACKET_DROP);
-            return XDP_DROP;
+            return drop_dns(DROP_GLOBAL_LIMIT);
         }
-        #ifdef BYTEGUARD_TEST
+
+#ifdef BYTEGUARD_TEST
         ret = bg_test_source_insert(&source_map, &key, &new_value, now);
 #else
         ret = bpf_map_update_elem(&source_map, &key, &new_value, BPF_NOEXIST);
 #endif
         if (ret == 0) {
             count_stat(SOURCE_INSERT);
-        }
-        else if (ret == -EEXIST) {
+        } else if (ret == -EEXIST) {
+            /* Insert race: the token is reserved; try existing-source CAS. */
             count_stat(INSERT_RACE);
             value = bpf_map_lookup_elem(&source_map, &key);
             if (!value) {
                 global_refund();
+                count_stat(GLOBAL_REFUND);
                 count_stat(MAP_ERROR);
-                count_stat(PACKET_DROP);
-                return XDP_DROP;
+                return drop_dns(DROP_INTERNAL_ERROR);
             }
+
             ret = source_commit(value, now);
             if (ret != SOURCE_SUCCESS) {
                 global_refund();
-                count_stat(PACKET_DROP);
-                return XDP_DROP;
-            }    
+                count_stat(GLOBAL_REFUND);
+                return drop_dns(DROP_SOURCE_COMMIT);
+            }
             __sync_add_and_fetch(&value->packet_seen, 1);
-        }
-        else if (ret != 0) {
+        } else if (ret != 0) {
             DEBUG_PRINT("ERROR in updating source map");
             global_refund();
+            count_stat(GLOBAL_REFUND);
             count_stat(MAP_ERROR);
-            count_stat(PACKET_DROP);
-            return XDP_DROP;
+            return drop_dns(DROP_INTERNAL_ERROR);
         }
     }
+
+    /* Only successfully admitted DNS queries increment DNS_PASS. */
+    count_stat(DNS_PASS);
     return XDP_PASS;
 }
 
