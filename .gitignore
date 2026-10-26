@@ -1,3 +1,5 @@
 /build/
 *.o
 compile_flags.txt
+/src/tests/core/
+*.core-test

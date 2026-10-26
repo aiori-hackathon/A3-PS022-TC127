@@ -10,6 +10,13 @@
 #define IPV4_OFFMASK  0x1FFF
 #define MAX_SOURCE    1024
 
+#ifdef BYTEGUARD_TEST
+#include "../tests/core/test_clock.bpf.h"
+#define BG_NOW_NS() byteguard_test_now_ns()
+#else
+#define BG_NOW_NS() bpf_ktime_get_ns()
+#endif
+
 #ifdef DEBUG
 #define DEBUG_PRINT(fmt, ...) bpf_printk(fmt, ##__VA_ARGS__)
 #else
@@ -28,6 +35,9 @@ struct dns_hdr {
 #include"gcra.h"
 #include"global_bucket.h"
 
+#ifdef BYTEGUARD_TEST
+#include "../tests/core/test_hooks.bpf.h"
+#endif
 enum {
     DNS_QUERIES,
     SOURCE_HIT,
@@ -154,7 +164,7 @@ int xdp_main(struct xdp_md *ctx){
     struct source_map_value *value = bpf_map_lookup_elem(&source_map, &key);
     if (value) {
         count_stat(SOURCE_HIT);
-        __u64 now = bpf_ktime_get_ns();
+        __u64 now = BG_NOW_NS();
         int ret = source_eligible(value, now);
         if (ret != SOURCE_SUCCESS) {
             count_stat(PACKET_DROP);
@@ -165,6 +175,9 @@ int xdp_main(struct xdp_md *ctx){
             count_stat(PACKET_DROP);
             return XDP_DROP;
         }
+        #ifdef BYTEGUARD_TEST
+        bg_test_before_source_commit(value, now);
+#endif
         ret = source_commit(value, now);
         if (ret != SOURCE_SUCCESS) {
             global_refund();
@@ -174,7 +187,7 @@ int xdp_main(struct xdp_md *ctx){
         __sync_add_and_fetch(&value->packet_seen, 1);
     }
     else {
-        __u64 now = bpf_ktime_get_ns();
+        __u64 now = BG_NOW_NS();
         struct source_map_value new_value = {
             .packet_seen = 1,
             .tat_ns = now + INTERVAL_NS
@@ -184,7 +197,11 @@ int xdp_main(struct xdp_md *ctx){
             count_stat(PACKET_DROP);
             return XDP_DROP;
         }
+        #ifdef BYTEGUARD_TEST
+        ret = bg_test_source_insert(&source_map, &key, &new_value, now);
+#else
         ret = bpf_map_update_elem(&source_map, &key, &new_value, BPF_NOEXIST);
+#endif
         if (ret == 0) {
             count_stat(SOURCE_INSERT);
         }

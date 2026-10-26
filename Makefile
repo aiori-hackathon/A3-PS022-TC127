@@ -1,3 +1,4 @@
+include Makefile.core-test
 CLANG ?= clang
 
 BPF_SRC := src/xdp/xdp_main.c
