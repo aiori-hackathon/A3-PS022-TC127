@@ -6,12 +6,16 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
+type statsProvider interface {
+	Read() (Stats, error)
+}
+
 type ByteGuardCollector struct {
-	reader *StatsReader
+	reader statsProvider
 	descs  []*prometheus.Desc
 }
 
-func NewByteGuardCollector(reader *StatsReader) *ByteGuardCollector {
+func NewByteGuardCollector(reader statsProvider) *ByteGuardCollector {
 	names := []struct {
 		name string
 		help string
@@ -27,7 +31,7 @@ func NewByteGuardCollector(reader *StatsReader) *ByteGuardCollector {
 		{"byteguard_drop_global_limit_total", "Packets dropped by global limiter"},
 		{"byteguard_drop_source_commit_total", "Packets dropped by source commit failure"},
 		{"byteguard_drop_internal_error_total", "Packets dropped by internal errors"},
-		{"byteguard_global_refunds_total", "Global token refunds"},
+		{"byteguard_global_refunds_total", "Global token refund calls (not confirmed refund successes)"},
 	}
 
 	descs := make([]*prometheus.Desc, 0, len(names))
@@ -57,6 +61,9 @@ func (c *ByteGuardCollector) Collect(ch chan<- prometheus.Metric) {
 	stats, err := c.reader.Read()
 	if err != nil {
 		log.Printf("failed to collect ByteGuard stats: %v", err)
+		// A successful empty scrape hides a failed BPF map read. Make the
+		// scrape fail visibly so Prometheus reports up=0 and the HTTP error.
+		ch <- prometheus.NewInvalidMetric(c.descs[0], err)
 		return
 	}
 

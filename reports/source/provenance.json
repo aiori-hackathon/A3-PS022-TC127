@@ -1,0 +1,13 @@
+{
+  "reference_report": {
+    "filename": "ByteGuard_AIORI3_Technical_Report_Revised.pdf",
+    "pages": 14,
+    "sha256": "8943effd5592d547e7651d234062745456c375a6cab7778153a452b1abfa65a3"
+  },
+  "protected_core_sha256": {
+    "src/xdp/gcra.h": "49aa2ce21f15f7fe8dad2e360b7f210e1952fb31fdf89dc3b7ee42a42b73beca",
+    "src/xdp/xdp_main.c": "fa3aa836c4540bb5e172351f0d5d13c58cae344d9a490ffc327f0995da90e5cb",
+    "src/xdp/global_bucket.h": "e624b41687a59738b4bb83b7c0e03e79c8978bed91c5839062c2fcc22070d041"
+  },
+  "evidence_scope": "Historical before-tuning schema-v4 comparison; no final Phase 2 data present"
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="451.27559055118115" height="510" preserveAspectRatio="xMinYMin meet" viewBox="0 0 451 510" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="451.27559055118115" height="510"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-510)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="5" y="456" width="210" height="40" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="55.379" y="481.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,963) scale(1,-1)">Current baseline starting point</text>
+			<text x="51.972500000000004" y="470.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,941) scale(1,-1)">Bounded parser + per-IP GCRA</text>
+			<rect x="255" y="456" width="190" height="40" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 4, 2;"/>
+			<text x="299.762" y="481.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,963) scale(1,-1)">Proposed protocol coverage</text>
+			<text x="293.381" y="470.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,941) scale(1,-1)">VLAN / fragment policy / IPv6</text>
+			<path d="M 255,476 L 215,476 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 2;"/>
+			<polygon points="215 476, 220.4027 473.3902, 220.4027 478.6098" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<rect x="5" y="382" width="210" height="48" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 4, 2;"/>
+			<text x="56.5085" y="411.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,823) scale(1,-1)">Proposed classification layers</text>
+			<text x="43.724000000000004" y="400.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,801) scale(1,-1)">Subnet checks + source qualification</text>
+			<path d="M 110,456 L 110,430 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="110 430, 112.6098 435.4027, 107.3902 435.4027" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<rect x="255" y="382" width="190" height="48" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 4, 2;"/>
+			<text x="307.2545" y="411.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,823) scale(1,-1)">Proposed bounded state</text>
+			<text x="292.8455" y="400.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,801) scale(1,-1)">Subnet + qualified-source maps</text>
+			<path d="M 255,406 L 215,406 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 2;"/>
+			<polygon points="215 406, 220.4027 403.3902, 220.4027 408.6098" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<rect x="5" y="302" width="210" height="48" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 4, 2;"/>
+			<text x="53.00749999999999" y="331.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,663) scale(1,-1)">Proposed evidence consultation</text>
+			<text x="39.845" y="320.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,641) scale(1,-1)">Query familiarity + valid cookie signal</text>
+			<path d="M 110,382 L 110,350 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="110 350, 112.6098 355.4027, 107.3902 355.4027" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<rect x="255" y="302" width="190" height="48" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 4, 2;"/>
+			<text x="287.513" y="331.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,663) scale(1,-1)">Proposed profile / cookie evidence</text>
+			<text x="284.8985" y="320.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,641) scale(1,-1)">Userspace or DNS-server assistance</text>
+			<path d="M 255,326 L 215,326 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 2;"/>
+			<polygon points="215 326, 220.4027 323.3902, 220.4027 328.6098" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<rect x="5" y="222" width="210" height="48" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 4, 2;"/>
+			<text x="57.2555" y="251.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,503) scale(1,-1)">Proposed admission category</text>
+			<text x="50.1365" y="240.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,481) scale(1,-1)">Qualified / discovery / best effort</text>
+			<path d="M 110,302 L 110,270 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="110 270, 112.6098 275.4027, 107.3902 275.4027" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<rect x="5" y="140" width="440" height="52" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="114.15599999999999" y="180" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,360) scale(1,-1)">Current global aggregate-budget concept (accounting anchor)</text>
+			<rect x="14" y="144" width="422" height="27" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 4, 2;"/>
+			<text x="138.7215" y="161" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,322) scale(1,-1)">Proposed protected | discovery | shared capacity</text>
+			<text x="136.89999999999998" y="150" style="font-family: Serif; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,300) scale(1,-1)">Partition sizes, borrowing and commit order undecided</text>
+			<path d="M 110,222 L 110,192 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="110 192, 112.6098 197.4027, 107.3902 197.4027" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<rect x="5" y="66" width="210" height="38" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="36.6365" y="85.0" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,170) scale(1,-1)">Current downstream Linux / DNS server</text>
+			<path d="M 110,140 L 110,104 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="110 104, 112.6098 109.4027, 107.3902 109.4027" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<rect x="255" y="66" width="190" height="38" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd; stroke-dasharray: 4, 2;"/>
+			<text x="301.0175" y="90.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,181) scale(1,-1)">Proposed userspace learner</text>
+			<text x="280.8845" y="79.5" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,159) scale(1,-1)">Bounded feedback / expiry / demotion</text>
+			<path d="M 215,85 L 255,85 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 2;"/>
+			<polygon points="255 85, 249.5973 87.60979, 249.5973 82.39021" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<path d="M 445,85 L 450,85 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 2;"/>
+			<path d="M 450,85 L 450,326 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 2;"/>
+			<path d="M 450,326 L 445,326 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; stroke-dasharray: 3, 2;"/>
+			<polygon points="445 326, 450.4027 323.3902, 450.4027 328.6098" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<text x="5" y="28" style="font-family: Serif; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,56) scale(1,-1)">Solid outline: implemented baseline component or concept.</text>
+			<text x="5" y="14" style="font-family: Serif; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,28) scale(1,-1)">Dashed outline/arrows: proposed layer, extension or feedback path; no measured improvement claimed.</text>
+		</g>
+	</g>
+</svg>
