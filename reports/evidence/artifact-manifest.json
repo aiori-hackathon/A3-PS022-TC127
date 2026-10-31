@@ -1,0 +1,1227 @@
+[
+  {
+    "path": "attack.log",
+    "bytes": 436,
+    "sha256": "050421d91b9afaa6e62e72d18f46f25b8b1de4a236afdd6afa4786b764f28a76"
+  },
+  {
+    "path": "dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "dnsmasq.pid",
+    "bytes": 8,
+    "sha256": "21e5355e71232e71b788b5993d88baa4dd2fc45874aa495c287dfb9d0d7ea731"
+  },
+  {
+    "path": "dnsperf.log",
+    "bytes": 19270,
+    "sha256": "214f4f09bfcf6b257bdd69f17e2c982a3f36aa122925f8a62187fef2367cd288"
+  },
+  {
+    "path": "reports/before-tuning/REPORT.md",
+    "bytes": 1599,
+    "sha256": "bb4741f5af94b9e912783a9d1f1c60432116acfdd93f6f2316792c81671f4f9d"
+  },
+  {
+    "path": "reports/before-tuning/grouped.csv",
+    "bytes": 3676,
+    "sha256": "4d244b6d57963ffee25912847457f0fee319a0df8bacd295705611b7d383cd42"
+  },
+  {
+    "path": "reports/before-tuning/ingress_pps_vs_attack_pps.png",
+    "bytes": 82200,
+    "sha256": "1ea44ae00da21de2ed4166bccadc48dea7a234204baaaa1c1b25b7e5518777d7"
+  },
+  {
+    "path": "reports/before-tuning/latency_vs_attack_pps.png",
+    "bytes": 80485,
+    "sha256": "bc6940cc12ac3cd7fa6c289afb16608037f63ba2ee753b9adf9fa9e895684419"
+  },
+  {
+    "path": "reports/before-tuning/server_cpu_vs_attack_pps.png",
+    "bytes": 81590,
+    "sha256": "afa0727f8051ff14fea94591fdfde5a3d3782b9933b29027c20a5d6771be6f46"
+  },
+  {
+    "path": "reports/before-tuning/success_vs_attack_pps.png",
+    "bytes": 81351,
+    "sha256": "ca6344aade2ca8a1bfa18b8383d4aade444314e964f66f6599f48af625c13198"
+  },
+  {
+    "path": "reports/before-tuning/summary.csv",
+    "bytes": 7015,
+    "sha256": "25c0b05e839dfac7b8d4de271be4e5af965317f0410afca6e249e4ec89cbc177"
+  },
+  {
+    "path": "runs/20261027T124815365226Z-1849081/attack.pcap",
+    "bytes": 95256,
+    "sha256": "837410e991dcf740a859794bedb758536ccd16559e49fcf587c5d19016d82900"
+  },
+  {
+    "path": "runs/20261027T124815365226Z-1849081/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T124815365226Z-1849081/summary.json",
+    "bytes": 1268,
+    "sha256": "6504eeb88fceb321bb75accb43fc9f5d48bfbc7a98d6ca20d684c044c171caf3"
+  },
+  {
+    "path": "runs/20261027T124815365226Z-1849081/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/20261027T163725943669Z-2163960/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163725943669Z-2163960/dnsperf.log",
+    "bytes": 750,
+    "sha256": "da826437e88f6d2057897943fb62e0e901c9601e821109d99c8114a8a66a005a"
+  },
+  {
+    "path": "runs/20261027T163725943669Z-2163960/summary.json",
+    "bytes": 2513,
+    "sha256": "81ea8bc8f59303f747db34e95e8315be418be207b9ab74c8a688bbf33ed9508a"
+  },
+  {
+    "path": "runs/20261027T163731987394Z-2164157/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163731987394Z-2164157/dnsperf.log",
+    "bytes": 750,
+    "sha256": "f29e6999360023ff221a231dd1500b52b2db806bb4471c8e1ee3a8ce945ef2d3"
+  },
+  {
+    "path": "runs/20261027T163731987394Z-2164157/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/20261027T163731987394Z-2164157/summary.json",
+    "bytes": 2870,
+    "sha256": "ef4bf060eeb396dedd8a89f9f07d4c0d32d53b1b5e5e911bb09a32f020cc4680"
+  },
+  {
+    "path": "runs/20261027T163737775553Z-2164440/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163737775553Z-2164440/dnsperf.log",
+    "bytes": 750,
+    "sha256": "c60b77ee13f5d41c5e9963a63a0edb573b3808f7b82ee887ac84da151f91d4b1"
+  },
+  {
+    "path": "runs/20261027T163737775553Z-2164440/summary.json",
+    "bytes": 2989,
+    "sha256": "bf5523e96db3a9d687ec1f78e734c9bcef58af217b099de0cf36ece997f6e6a7"
+  },
+  {
+    "path": "runs/20261027T163737775553Z-2164440/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/20261027T163754440786Z-2164833/attack.log",
+    "bytes": 434,
+    "sha256": "8fc5f2c57d3675c1748469b6afc4cd3fca78e8a1cf5c20f7f50b3c2db429173d"
+  },
+  {
+    "path": "runs/20261027T163754440786Z-2164833/attack.pcap",
+    "bytes": 95256,
+    "sha256": "78f91c5d0d6486f81adbd6ad84c34e2cd4e98f49094c26d850e5921c7d483bc5"
+  },
+  {
+    "path": "runs/20261027T163754440786Z-2164833/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163754440786Z-2164833/dnsperf.log",
+    "bytes": 753,
+    "sha256": "86ebd18f38604b5a239a95744562a11c80171de19d206505acc793f214ee83f7"
+  },
+  {
+    "path": "runs/20261027T163754440786Z-2164833/summary.json",
+    "bytes": 3032,
+    "sha256": "77dc882634449e6fee1db0e711d3b3696b45c54d121f8b4582f1ee822885d500"
+  },
+  {
+    "path": "runs/20261027T163806342108Z-2164833/attack.log",
+    "bytes": 434,
+    "sha256": "3b77d84d62b7abf8af199b734644440002c8fe1cf8648659af138b481a2a5a68"
+  },
+  {
+    "path": "runs/20261027T163806342108Z-2164833/attack.pcap",
+    "bytes": 95256,
+    "sha256": "d517f447e13a5c9a2886a3bcc0f396e39383733c9a5b0f41be02440df6de7536"
+  },
+  {
+    "path": "runs/20261027T163806342108Z-2164833/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163806342108Z-2164833/dnsperf.log",
+    "bytes": 18569,
+    "sha256": "f2115e94f8869c532425d0ce778c9f75a0c261066db9b5689a0c67b91e695e61"
+  },
+  {
+    "path": "runs/20261027T163806342108Z-2164833/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/20261027T163806342108Z-2164833/summary.json",
+    "bytes": 3375,
+    "sha256": "c9ff23433f4473fd4bc8cc342fc5b6f2c4833404fa1879c741537b6ad709b040"
+  },
+  {
+    "path": "runs/20261027T163818195262Z-2164833/attack.log",
+    "bytes": 434,
+    "sha256": "9aac43943ad739166c065888c13cb60c5c8b66516f5f181da3755c5c14a15106"
+  },
+  {
+    "path": "runs/20261027T163818195262Z-2164833/attack.pcap",
+    "bytes": 95256,
+    "sha256": "7913062fbbeebec93655ed406a02dfdda9fe1ea7ce13df9262bb0b06f7fe4bcf"
+  },
+  {
+    "path": "runs/20261027T163818195262Z-2164833/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163818195262Z-2164833/dnsperf.log",
+    "bytes": 18898,
+    "sha256": "a402154cce0580cf2b773d416e44ab3c5c1618a3368e62d9313a91ad092dd422"
+  },
+  {
+    "path": "runs/20261027T163818195262Z-2164833/summary.json",
+    "bytes": 3513,
+    "sha256": "f1e264404a3f7cddf81649b820141237fdd0032de58c0b00a3f642cef920cdb0"
+  },
+  {
+    "path": "runs/20261027T163818195262Z-2164833/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/20261027T163830604436Z-2164833/attack.log",
+    "bytes": 434,
+    "sha256": "cbe3db98a77c177f4f410e6122a7c7ad476f0a60ba13102569bae2e7aa8c5939"
+  },
+  {
+    "path": "runs/20261027T163830604436Z-2164833/attack.pcap",
+    "bytes": 95256,
+    "sha256": "100f1356fd0fb980f12130a8c9a5ace9300e3a66c0e234b3bf404dcf02eabfdc"
+  },
+  {
+    "path": "runs/20261027T163830604436Z-2164833/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163830604436Z-2164833/dnsperf.log",
+    "bytes": 753,
+    "sha256": "b9ac6f4b847d0253a215854061a6678185cea83534a55eaea0e953e0927a68f7"
+  },
+  {
+    "path": "runs/20261027T163830604436Z-2164833/summary.json",
+    "bytes": 3032,
+    "sha256": "aa2dc5b6dc848cdd7294fb8d010022756d58b057f74f1f9d7a7d4ebec24cc55b"
+  },
+  {
+    "path": "runs/20261027T163841489319Z-2164833/attack.log",
+    "bytes": 434,
+    "sha256": "407b48385dd037cc35481faa7febe5ad38885b6799106e78ee47da0123373d80"
+  },
+  {
+    "path": "runs/20261027T163841489319Z-2164833/attack.pcap",
+    "bytes": 95256,
+    "sha256": "dbe1639411caf6b5ceae03261d5fa9505e4dd2f30951853c69929aa102a6d31e"
+  },
+  {
+    "path": "runs/20261027T163841489319Z-2164833/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163841489319Z-2164833/dnsperf.log",
+    "bytes": 19092,
+    "sha256": "a7985463f5b52e18a4672e24737150c818289589a4964210498ab03025b1490e"
+  },
+  {
+    "path": "runs/20261027T163841489319Z-2164833/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/20261027T163841489319Z-2164833/summary.json",
+    "bytes": 3377,
+    "sha256": "15205478234e4a3f71cd23b3e77c6b22335b481941f77a2ac5ab2b8597569ad6"
+  },
+  {
+    "path": "runs/20261027T163853498876Z-2164833/attack.log",
+    "bytes": 434,
+    "sha256": "5f18ae30d04c7c6425d116669f26100d810642305f95d6eab6bbf39f14d6e8f0"
+  },
+  {
+    "path": "runs/20261027T163853498876Z-2164833/attack.pcap",
+    "bytes": 95256,
+    "sha256": "5fa85ada275f1a603f7341dddddf9b9be4e8930c15f42e82c15501d31c27d80d"
+  },
+  {
+    "path": "runs/20261027T163853498876Z-2164833/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163853498876Z-2164833/dnsperf.log",
+    "bytes": 19351,
+    "sha256": "055667f80fd2af5ce91b501261ffff9d32da00cfb5541490411893024f091b20"
+  },
+  {
+    "path": "runs/20261027T163853498876Z-2164833/summary.json",
+    "bytes": 3496,
+    "sha256": "a44338a0e5c865c0a938b48221853dfec840f4e3a2f1a4e10cb2b149c147ab13"
+  },
+  {
+    "path": "runs/20261027T163853498876Z-2164833/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/20261027T163905905256Z-2164833/attack.log",
+    "bytes": 434,
+    "sha256": "3383e7d8640b91cd441bd288130798dfd2461cde5d4d5c39a7fffbf9660fea37"
+  },
+  {
+    "path": "runs/20261027T163905905256Z-2164833/attack.pcap",
+    "bytes": 95256,
+    "sha256": "8bb9136082a958b9ea5e6c512ca32cdf9d35268703b482ad55560b60a105fa87"
+  },
+  {
+    "path": "runs/20261027T163905905256Z-2164833/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163905905256Z-2164833/dnsperf.log",
+    "bytes": 753,
+    "sha256": "176654d271723a20f9a5ad2aace306adab5c4cae71c3baf48d74c08a3d2302aa"
+  },
+  {
+    "path": "runs/20261027T163905905256Z-2164833/summary.json",
+    "bytes": 3029,
+    "sha256": "150c38cab271b2f68084219da6d1c1512b37cc80b48bd4d0091a1acbc575b32a"
+  },
+  {
+    "path": "runs/20261027T163916752941Z-2164833/attack.log",
+    "bytes": 434,
+    "sha256": "358199b826f2d705be11d0e16451b8ab9863e53a95834b67daa49d296e1e7a00"
+  },
+  {
+    "path": "runs/20261027T163916752941Z-2164833/attack.pcap",
+    "bytes": 95256,
+    "sha256": "997d2687619c80bc21f3739482a167fa7d66a3f6d3571ec2edc2a9f222fd43d3"
+  },
+  {
+    "path": "runs/20261027T163916752941Z-2164833/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163916752941Z-2164833/dnsperf.log",
+    "bytes": 15396,
+    "sha256": "e4266bee53b1a203120b91ea68921771c9220bcaef02c67f9c1b1ee718bccb4d"
+  },
+  {
+    "path": "runs/20261027T163916752941Z-2164833/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/20261027T163916752941Z-2164833/summary.json",
+    "bytes": 3385,
+    "sha256": "2615ee8f5ac5a5f5aab2a35c46ab8a3cd04b68d8f228cfaa320eaa6480f62fa1"
+  },
+  {
+    "path": "runs/20261027T163928702569Z-2164833/attack.log",
+    "bytes": 434,
+    "sha256": "b93156d4657c5416cce6905d2a8683b1b19f20d2bf79aa675a85bd3813170283"
+  },
+  {
+    "path": "runs/20261027T163928702569Z-2164833/attack.pcap",
+    "bytes": 95256,
+    "sha256": "480418ca2e8af7e365141945967f20c76a7554ef4c31818244f59f8fc44690c0"
+  },
+  {
+    "path": "runs/20261027T163928702569Z-2164833/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T163928702569Z-2164833/dnsperf.log",
+    "bytes": 5188,
+    "sha256": "1a2e06f5acccbac0bf1288866a4f70905c565077d546074a65671cab016eb4d4"
+  },
+  {
+    "path": "runs/20261027T163928702569Z-2164833/summary.json",
+    "bytes": 3520,
+    "sha256": "af280857c1b033df303d76196510c59211dae7b53c461eaf187670e1e64ed70c"
+  },
+  {
+    "path": "runs/20261027T163928702569Z-2164833/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/20261027T190107788185Z-2372692/attack.log",
+    "bytes": 434,
+    "sha256": "7587421b120b2f2edfef8ee46126e3756d557a55f30ed9560ca6ea2411d48bf3"
+  },
+  {
+    "path": "runs/20261027T190107788185Z-2372692/attack.pcap",
+    "bytes": 95256,
+    "sha256": "f0138208280d8bbd2d489b97dc9d80d7f6a278676ae56aa3e323af7705fe65a6"
+  },
+  {
+    "path": "runs/20261027T190107788185Z-2372692/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190107788185Z-2372692/dnsperf.log",
+    "bytes": 18904,
+    "sha256": "473e68df626a3c56fd7bf9733b1878492b54ffb67d81aaa4910a3f2fbb71b9b3"
+  },
+  {
+    "path": "runs/20261027T190107788185Z-2372692/summary.json",
+    "bytes": 4069,
+    "sha256": "8f8e68419c78c6c9bdccdaaa5de9f5c8d74e97e0086e6367365cb7b08697810a"
+  },
+  {
+    "path": "runs/20261027T190107788185Z-2372692/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/20261027T190222575302Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190222575302Z-2374454/dnsperf.log",
+    "bytes": 753,
+    "sha256": "4fb819484902546991ac3df42d12ea69c61fcaf12a676737b434926aba9b7da3"
+  },
+  {
+    "path": "runs/20261027T190222575302Z-2374454/summary.json",
+    "bytes": 3055,
+    "sha256": "660e4ffb49dd013884b370e3e55ffd237f402e5ee0fef7277044dd51edd2df9b"
+  },
+  {
+    "path": "runs/20261027T190233245416Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190233245416Z-2374454/dnsperf.log",
+    "bytes": 753,
+    "sha256": "afb05c9d339651b5e9eef818ba45d6083acfe8a7e128ced47f99ecdfd164bdbc"
+  },
+  {
+    "path": "runs/20261027T190233245416Z-2374454/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/20261027T190233245416Z-2374454/summary.json",
+    "bytes": 3401,
+    "sha256": "00a5d03d40ae9ce2693c3624534cf477a889d95b45c103bd106dab8a99926d4c"
+  },
+  {
+    "path": "runs/20261027T190243844151Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190243844151Z-2374454/dnsperf.log",
+    "bytes": 753,
+    "sha256": "3d1b778582cd31be47d479ee1c0c34425ad37b0879a79cca44a1fc1f93271af5"
+  },
+  {
+    "path": "runs/20261027T190243844151Z-2374454/summary.json",
+    "bytes": 3619,
+    "sha256": "ae59b30640fb5dc731ce45be0d253129504392db2a664be7ecebb9c206cfc40e"
+  },
+  {
+    "path": "runs/20261027T190243844151Z-2374454/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/20261027T190255803571Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190255803571Z-2374454/dnsperf.log",
+    "bytes": 753,
+    "sha256": "dc204882e8670313da7daedc346b85fb43708f8e116cc3a7932a8d17988c47aa"
+  },
+  {
+    "path": "runs/20261027T190255803571Z-2374454/summary.json",
+    "bytes": 3057,
+    "sha256": "3ccf8b970c8d5c487022cfc1441cd40f772dc1eb56c80ada8b2efd44a9e66838"
+  },
+  {
+    "path": "runs/20261027T190306499037Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190306499037Z-2374454/dnsperf.log",
+    "bytes": 753,
+    "sha256": "c00ecf1a0e0a74bf6097b670ab29d1978b8e1acb67c8034e9344d865b43a225b"
+  },
+  {
+    "path": "runs/20261027T190306499037Z-2374454/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/20261027T190306499037Z-2374454/summary.json",
+    "bytes": 3415,
+    "sha256": "2d80ff4e662f7827576ea9dc952dd02a11a64c7a9ae7befc4726bc81c5816375"
+  },
+  {
+    "path": "runs/20261027T190317399101Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190317399101Z-2374454/dnsperf.log",
+    "bytes": 753,
+    "sha256": "d8729803dccfaeeffdbdf7ce1aa7f11a31362fd356cb810b4e1894499d66b87d"
+  },
+  {
+    "path": "runs/20261027T190317399101Z-2374454/summary.json",
+    "bytes": 3617,
+    "sha256": "ff6a2662a4ad40dbfab616cc3700b6cbbad85ca16e90c4cce6603b3cb9a20ea3"
+  },
+  {
+    "path": "runs/20261027T190317399101Z-2374454/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/20261027T190331147228Z-2374454/attack.log",
+    "bytes": 434,
+    "sha256": "cb74c237e2136274a005ced166f61aabc13228ef1b8b9478a43d6238308850e7"
+  },
+  {
+    "path": "runs/20261027T190331147228Z-2374454/attack.pcap",
+    "bytes": 95256,
+    "sha256": "fc84c87b5e15a0c81e8489f2929c58886a4dde9b775eae77326a8147b226acbf"
+  },
+  {
+    "path": "runs/20261027T190331147228Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190331147228Z-2374454/dnsperf.log",
+    "bytes": 753,
+    "sha256": "16bc9869a7626d4dc438e7a3619ccb5c4e6288808e268e4a2e73780db72b7ec6"
+  },
+  {
+    "path": "runs/20261027T190331147228Z-2374454/summary.json",
+    "bytes": 3428,
+    "sha256": "422ace7ef4dbad24cd9e1ab31d3df61e297d9aed513a102bfe71ae4fe25cdf26"
+  },
+  {
+    "path": "runs/20261027T190343148680Z-2374454/attack.log",
+    "bytes": 434,
+    "sha256": "515675ad94eb02a55ee5bce8655dfba40b944da552901e7b1ad63317fe06528a"
+  },
+  {
+    "path": "runs/20261027T190343148680Z-2374454/attack.pcap",
+    "bytes": 95256,
+    "sha256": "6968fb4ed61ce18fd59c618c7bc6a6e5b12e129334051c1e6ee3dc4aad73ef21"
+  },
+  {
+    "path": "runs/20261027T190343148680Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190343148680Z-2374454/dnsperf.log",
+    "bytes": 3255,
+    "sha256": "c7ba3f830ea0774a23f9af86170200afcdd5869c5a2fda0f55a3946151b43d2b"
+  },
+  {
+    "path": "runs/20261027T190343148680Z-2374454/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/20261027T190343148680Z-2374454/summary.json",
+    "bytes": 3782,
+    "sha256": "d8015916fdbb744818b1c3a3d03e489d81a6200f02a70d22df8154e299382578"
+  },
+  {
+    "path": "runs/20261027T190355070917Z-2374454/attack.log",
+    "bytes": 434,
+    "sha256": "039172cceed7850f06e519c00234fbf9c4560906b2ac358018db91f6c34ace5b"
+  },
+  {
+    "path": "runs/20261027T190355070917Z-2374454/attack.pcap",
+    "bytes": 95256,
+    "sha256": "6fbe19dea80313c8dd9899bbd4944d01a1c870f1c4afd342bf9caee5ea0c3325"
+  },
+  {
+    "path": "runs/20261027T190355070917Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190355070917Z-2374454/dnsperf.log",
+    "bytes": 19351,
+    "sha256": "70ed54dd902f4f9558a4f9c2924b5471e29b5deb86e24492f160985218df5934"
+  },
+  {
+    "path": "runs/20261027T190355070917Z-2374454/summary.json",
+    "bytes": 3977,
+    "sha256": "13524f792de3f586211e947c3bebe7094fe31a4fab7c2902048677b434a6e745"
+  },
+  {
+    "path": "runs/20261027T190355070917Z-2374454/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/20261027T190407803619Z-2374454/attack.log",
+    "bytes": 434,
+    "sha256": "c11979b346221213422dff7294a275aab220a4befdc9ea93011c87b400ae6119"
+  },
+  {
+    "path": "runs/20261027T190407803619Z-2374454/attack.pcap",
+    "bytes": 95256,
+    "sha256": "a63090bc6a8ca9bf6712e5ab3aa1448788b4f34944f39bf0cdfeb50374c611ab"
+  },
+  {
+    "path": "runs/20261027T190407803619Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190407803619Z-2374454/dnsperf.log",
+    "bytes": 753,
+    "sha256": "2779a06dd76528a412b743ac300fa766e08469730d91cec6cabca7a2abad492e"
+  },
+  {
+    "path": "runs/20261027T190407803619Z-2374454/summary.json",
+    "bytes": 3420,
+    "sha256": "cb28767d4630cd1a932ecdf0d3e4799834e7196ae6a5a4705ccfdd1b13f576e3"
+  },
+  {
+    "path": "runs/20261027T190418694612Z-2374454/attack.log",
+    "bytes": 434,
+    "sha256": "659e8cb5078effc6b16cee730401ad03ba60aee35703a82c88414d3c583b3ba5"
+  },
+  {
+    "path": "runs/20261027T190418694612Z-2374454/attack.pcap",
+    "bytes": 95256,
+    "sha256": "820edf515db9c6b5d05d4e7b0975a142b5bab4937b973a1b9d3093d171b91814"
+  },
+  {
+    "path": "runs/20261027T190418694612Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190418694612Z-2374454/dnsperf.log",
+    "bytes": 19351,
+    "sha256": "417e0086176dc592c9990b3a77309982e81071be1bba79c7285f5adb5b308bc4"
+  },
+  {
+    "path": "runs/20261027T190418694612Z-2374454/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/20261027T190418694612Z-2374454/summary.json",
+    "bytes": 3760,
+    "sha256": "7c9bc44e244df150d924842a8851d06b2cdf861e12cf4e5e60ad029e7d59944d"
+  },
+  {
+    "path": "runs/20261027T190430678219Z-2374454/attack.log",
+    "bytes": 434,
+    "sha256": "4d809380b9559e1e33aed970dc9b80f0bfc4f9528b44b94e31acbc80e451dac4"
+  },
+  {
+    "path": "runs/20261027T190430678219Z-2374454/attack.pcap",
+    "bytes": 95256,
+    "sha256": "84a049b557ccd0840ee8228c61d26de2a1c1194b81090cd783e94d8bf24fa239"
+  },
+  {
+    "path": "runs/20261027T190430678219Z-2374454/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/20261027T190430678219Z-2374454/dnsperf.log",
+    "bytes": 19167,
+    "sha256": "c339cb26c4e4504c9eeff32d812f54545438587ca44d0e6a1188b40d16c124c2"
+  },
+  {
+    "path": "runs/20261027T190430678219Z-2374454/summary.json",
+    "bytes": 3978,
+    "sha256": "73a31c68537747f475247073e233be40fa1818859843579777a2f5543e5738b0"
+  },
+  {
+    "path": "runs/20261027T190430678219Z-2374454/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/REPORT.md",
+    "bytes": 1512,
+    "sha256": "b04b3bffa683c149b1c715916c5cd21a7d851d2130ada13e489188ce4f766384"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193058-b8c7c09c/attack.log",
+    "bytes": 434,
+    "sha256": "25f471f595d617b7d2b9955c6eb4f46313eca00773e6ac43781839e500ba607d"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193058-b8c7c09c/attack.pcap",
+    "bytes": 95256,
+    "sha256": "21094656c33d1a60fd2c9ebebdf3d5162da21b73fe2c15d7cb4e9d286ed50f9c"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193058-b8c7c09c/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193058-b8c7c09c/dnsperf.log",
+    "bytes": 4659,
+    "sha256": "0eed8f6e522d5ba9e2f3912ff398630e9d86c3f6c45b2f8a591faf35f9a1e11d"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193058-b8c7c09c/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193058-b8c7c09c/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193058-b8c7c09c/summary.json",
+    "bytes": 4502,
+    "sha256": "fafb7a38dfd0fba85564726686f8ea88cb6bb71e8ccfb6c8200320d64e85b2f8"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193133-516eead9/attack.log",
+    "bytes": 434,
+    "sha256": "12e843bb28340ab52e5e2ee3f7af1f0060822260b9a71c1739c46c8c024bf9a1"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193133-516eead9/attack.pcap",
+    "bytes": 95256,
+    "sha256": "dd7f781b5c6d2aba2bec66ba3d4abaee720c6067f8a41dd9c1e4955be35f25ba"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193133-516eead9/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193133-516eead9/dnsperf.log",
+    "bytes": 17269,
+    "sha256": "3a750de2682717abff6ad89d62932b9e7f1f59e71c86af992fe96895404bc35b"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193133-516eead9/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193133-516eead9/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/before-tuning__nft__distributed__3000pps__50qps__20261027T193133-516eead9/summary.json",
+    "bytes": 4477,
+    "sha256": "ce968caa9ddd28188fb6ae883cb5b61315b09e446df31f1f97286e6f48f36fb8"
+  },
+  {
+    "path": "runs/before-tuning__nft__none__0pps__50qps__20261027T192948-2741b227/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__nft__none__0pps__50qps__20261027T192948-2741b227/dnsperf.log",
+    "bytes": 753,
+    "sha256": "58114fbe41a129bf494dcb535ec7aa0733c6055f43a9e68d169dcd704adfe048"
+  },
+  {
+    "path": "runs/before-tuning__nft__none__0pps__50qps__20261027T192948-2741b227/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__nft__none__0pps__50qps__20261027T192948-2741b227/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/before-tuning__nft__none__0pps__50qps__20261027T192948-2741b227/summary.json",
+    "bytes": 4055,
+    "sha256": "f5056431e3168966427986cb36234ba102f063795b89320eb8b231f49ff06422"
+  },
+  {
+    "path": "runs/before-tuning__nft__none__0pps__50qps__20261027T193021-3a1ad720/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__nft__none__0pps__50qps__20261027T193021-3a1ad720/dnsperf.log",
+    "bytes": 753,
+    "sha256": "1cd6395ff49818ac2d245e8690c09465c105462de88f3078f181914ff5b92187"
+  },
+  {
+    "path": "runs/before-tuning__nft__none__0pps__50qps__20261027T193021-3a1ad720/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__nft__none__0pps__50qps__20261027T193021-3a1ad720/nftables.nft",
+    "bytes": 481,
+    "sha256": "dc5db83af5ea6ef3e90db106284072ad4e988c0d24a62f6d969a480d28e7305f"
+  },
+  {
+    "path": "runs/before-tuning__nft__none__0pps__50qps__20261027T193021-3a1ad720/summary.json",
+    "bytes": 4054,
+    "sha256": "3d6f21cc9fa46b249d8e9aa5c71611fab6e2f0e2d00565dde4d3a10e358e8714"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193046-1eaac51e/attack.log",
+    "bytes": 434,
+    "sha256": "0768c0238ea1fe19ca50b7782cdac9a165f950af6620ad454e96ee20593197fa"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193046-1eaac51e/attack.pcap",
+    "bytes": 95256,
+    "sha256": "913a28f24fba9bc1ddd535cff475a291f4ce8f302c274a9d82847ffeb0f94fae"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193046-1eaac51e/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193046-1eaac51e/dnsperf.log",
+    "bytes": 753,
+    "sha256": "4c5f07631b80a92566076811bdf073097d775ca84f833a17a819fff80cab6ec8"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193046-1eaac51e/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193046-1eaac51e/summary.json",
+    "bytes": 4095,
+    "sha256": "462888dce2eb3d0c80a1e71622c20d658356bdff7df35e13592226a037c6a313"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193122-c4be96dc/attack.log",
+    "bytes": 434,
+    "sha256": "f53575cf33fea3a76730bfd95c197f42117d3ff17a4a74110682e9fb64a40583"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193122-c4be96dc/attack.pcap",
+    "bytes": 95256,
+    "sha256": "95c315bc2bc71ff005dc564ce15944fcdeb9120c159d21ed6d72a8d64c620c60"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193122-c4be96dc/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193122-c4be96dc/dnsperf.log",
+    "bytes": 753,
+    "sha256": "c702ce3ca3197d33d993b7f03c2e71fc6441a62e1b7fea609cbdec59658ece9a"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193122-c4be96dc/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__none__distributed__3000pps__50qps__20261027T193122-c4be96dc/summary.json",
+    "bytes": 4098,
+    "sha256": "91e9a3624c3c06b156d82b4cac6e65b89c13be4aed4bd8cef3474690a2233ec3"
+  },
+  {
+    "path": "runs/before-tuning__none__none__0pps__50qps__20261027T192937-8d0dc8ce/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__none__none__0pps__50qps__20261027T192937-8d0dc8ce/dnsperf.log",
+    "bytes": 753,
+    "sha256": "e5582e735bbb95dd68f9db84ad929e24628db6b15b4a2ff794bc554025926343"
+  },
+  {
+    "path": "runs/before-tuning__none__none__0pps__50qps__20261027T192937-8d0dc8ce/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__none__none__0pps__50qps__20261027T192937-8d0dc8ce/summary.json",
+    "bytes": 3664,
+    "sha256": "3fa81ad4a56bd07df78312df7647bcc31a5a1c0be8b0d775d3af0f7d52b584f5"
+  },
+  {
+    "path": "runs/before-tuning__none__none__0pps__50qps__20261027T193011-8dc626c5/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__none__none__0pps__50qps__20261027T193011-8dc626c5/dnsperf.log",
+    "bytes": 753,
+    "sha256": "8e82f95bc834b9d50bf8ec45456dae31bc7876dc9490a90f8ffdcd8fd9d51ed9"
+  },
+  {
+    "path": "runs/before-tuning__none__none__0pps__50qps__20261027T193011-8dc626c5/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__none__none__0pps__50qps__20261027T193011-8dc626c5/summary.json",
+    "bytes": 3667,
+    "sha256": "547a7bffc6101732c5812ca6891e16f8c47ac3cbce82ff75382a6278c70e3530"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193110-b496939f/attack.log",
+    "bytes": 434,
+    "sha256": "62f880b7eb9fc99ffd9e1ee1617a742e8f1f741ea94ddfaa0453ca66e7d21a7a"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193110-b496939f/attack.pcap",
+    "bytes": 95256,
+    "sha256": "a18a6dcd4bfffc283e79847ca57949851122bb486f9ed71f756c345308f9bfe4"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193110-b496939f/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193110-b496939f/dnsperf.log",
+    "bytes": 3289,
+    "sha256": "dc308358b13cde110e50e697d08a1c1a41748b18915c54c94e661fa2d8ff2547"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193110-b496939f/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193110-b496939f/summary.json",
+    "bytes": 4675,
+    "sha256": "9864a5d30f8d8f0ea461d66e953883fc725164670cd72dd828025f14e9494a10"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193110-b496939f/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193145-26e31918/attack.log",
+    "bytes": 434,
+    "sha256": "eb29be48dd8509fd64d8cd0ac15042b39eda92bb6b10a0e5767a81d7b50da87b"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193145-26e31918/attack.pcap",
+    "bytes": 95256,
+    "sha256": "ccaf6de7d48de2118293be5b53a78d889b657dd7eaa535adf163fcd67b143249"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193145-26e31918/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193145-26e31918/dnsperf.log",
+    "bytes": 19351,
+    "sha256": "aa37cefd6dd14538a7ba9c989cdf4d84287e16f2e492f7a961310ad3cd88e68d"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193145-26e31918/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193145-26e31918/summary.json",
+    "bytes": 4650,
+    "sha256": "435c100a41923a78067e6beec2b26769c01ea2a14ed300e75b14f8230297810d"
+  },
+  {
+    "path": "runs/before-tuning__xdp__distributed__3000pps__50qps__20261027T193145-26e31918/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/before-tuning__xdp__none__0pps__50qps__20261027T192958-68a72e26/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__xdp__none__0pps__50qps__20261027T192958-68a72e26/dnsperf.log",
+    "bytes": 753,
+    "sha256": "1f8ee504693bdc87c0f09cfc0b75fbb21970c4543a3accb7289924bd812642db"
+  },
+  {
+    "path": "runs/before-tuning__xdp__none__0pps__50qps__20261027T192958-68a72e26/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__xdp__none__0pps__50qps__20261027T192958-68a72e26/summary.json",
+    "bytes": 4227,
+    "sha256": "e7e6228d3b46380f3a5830f14c212cdc16bedb09911bf4971dbd4ae05bd0c17b"
+  },
+  {
+    "path": "runs/before-tuning__xdp__none__0pps__50qps__20261027T192958-68a72e26/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/before-tuning__xdp__none__0pps__50qps__20261027T193032-c69c3669/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/before-tuning__xdp__none__0pps__50qps__20261027T193032-c69c3669/dnsperf.log",
+    "bytes": 753,
+    "sha256": "1b26de01c7b5aebe12a529d85f5b013091bb4d110b00359a30a61133a07dd68b"
+  },
+  {
+    "path": "runs/before-tuning__xdp__none__0pps__50qps__20261027T193032-c69c3669/experiment.toml",
+    "bytes": 381,
+    "sha256": "d89ecd94e598fef57fa35b0a956938129147bde6606574baaa5164d82939b4ec"
+  },
+  {
+    "path": "runs/before-tuning__xdp__none__0pps__50qps__20261027T193032-c69c3669/summary.json",
+    "bytes": 4226,
+    "sha256": "a5d6c871aec2cc862ff2396aae5f1979f4093770c176c490d4f15cab07cfd65b"
+  },
+  {
+    "path": "runs/before-tuning__xdp__none__0pps__50qps__20261027T193032-c69c3669/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/grouped.csv",
+    "bytes": 3632,
+    "sha256": "49082ad45fbdb5a224e26f3814f346f8234283452cd22d45cf28e741d1761603"
+  },
+  {
+    "path": "runs/ingress_pps_vs_attack_pps.png",
+    "bytes": 68045,
+    "sha256": "3b7cbddcf1a4cc2232a3f5990b1eeeb502e74215cccc64b9d8db70a10f61f72d"
+  },
+  {
+    "path": "runs/latency_vs_attack_pps.png",
+    "bytes": 71927,
+    "sha256": "10e68294ad6afe061198dc128e554d157cc72dca2f320bafb46c7bd27be1f4bc"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/attack.log",
+    "bytes": 434,
+    "sha256": "9642cfd7e8bfa21dce5c5387438690ef65c79347fddd7aa61967721ad9c98817"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/attack.pcap",
+    "bytes": 95256,
+    "sha256": "ea966bb608517fd6a734e2998ff7984ff1004b788f68e0cf87a7798a2fcb50f4"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/client.pcap",
+    "bytes": 88060,
+    "sha256": "79d64e747ec2039bc0e85b86582e1bff9cd631e65c052575b2a78ce3639a80a7"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/client.txt",
+    "bytes": 17903,
+    "sha256": "c37e41fa1c579e9877d2884c1cd08bdef5e6e468d7ea8e513f49554eba177041"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/client_tcpdump.log",
+    "bytes": 166,
+    "sha256": "053d01bcf63db149f3206e6fbc6d1810c0374dae01f6cea464ccb44fe3cd845f"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/dnsperf.log",
+    "bytes": 4311,
+    "sha256": "77bbd0506fd70e1ebfc3b0267215669cbfa98505dabf0bca63ef77abdc7dd19f"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/experiment.toml",
+    "bytes": 373,
+    "sha256": "101837b5fb47ecd1185818af6d2b9d811d2e051785ad4f8f8954234f9f79a68e"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/server.pcap",
+    "bytes": 79600,
+    "sha256": "935ade690b8d1bb5f64ba5cec9735c017afac4812a1b5df1fc1d369706e3e1e6"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/server.txt",
+    "bytes": 17910,
+    "sha256": "a42344e4cd1068a2cccdb7d24ab7e24688470b350f6474753e64bcad75004d32"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/server_tcpdump.log",
+    "bytes": 166,
+    "sha256": "cc8d73a8b1e2e7141e3b3e358fc0689572a7675ea098d55f0dcf238a30eec1c7"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/summary.json",
+    "bytes": 5872,
+    "sha256": "c98610cb5a2ddcf36f5c4a740b5b00fa48477b40a9adfce90131cf1015194868"
+  },
+  {
+    "path": "runs/mentor-evidence__xdp__distributed__3000pps__50qps__20261027T193345-37797c3c/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215314-b9b2bd84/attack.log",
+    "bytes": 434,
+    "sha256": "46ffe51be44745f89dd90ca9ae5bd79bb276db55009483ac16d21d2f213e71af"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215314-b9b2bd84/attack.pcap",
+    "bytes": 95256,
+    "sha256": "275420a838055e7f2f296d4ee4563e2931bdd6a8c7a0f46e1935b44d80c10297"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215314-b9b2bd84/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215314-b9b2bd84/dnsperf.log",
+    "bytes": 19351,
+    "sha256": "c6f6293487550230cb280542b31303a3274b4ea16708e86adaea7c61518f6ed7"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215314-b9b2bd84/summary.json",
+    "bytes": 4766,
+    "sha256": "949a190f02c6407a971fd95a6ad3d916b78a7215bac31685e19bd077c107e76f"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215314-b9b2bd84/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215328-2b3ea82b/attack.log",
+    "bytes": 434,
+    "sha256": "d76f70c5b21c72647e7dee37d9f790e4b81fd35712d0cf97cb101b03dc81b39a"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215328-2b3ea82b/attack.pcap",
+    "bytes": 95256,
+    "sha256": "3ff0be302aa8f17e381df075b0b6ea02d2071f2d8d8d4f3d52e3b2ad9ac2e8d9"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215328-2b3ea82b/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215328-2b3ea82b/dnsperf.log",
+    "bytes": 15615,
+    "sha256": "94b75ddc48c9524b00c7aa9e9e2f9cfc97cad87db919c28334224c9e01e87bc7"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215328-2b3ea82b/summary.json",
+    "bytes": 4774,
+    "sha256": "e6da54dfd4b130a0c46a9097d23f53f7063c1c3d0c49b484636e27e4167b5775"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215328-2b3ea82b/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215341-555c68de/attack.log",
+    "bytes": 434,
+    "sha256": "02ca76b7007b691d4c68268ea33670d711ed8b32a9a555a6c81d799529746563"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215341-555c68de/attack.pcap",
+    "bytes": 95256,
+    "sha256": "94d219ab5ac019d7c5df1251ebda739945b0293f31800eafc25863085c6205eb"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215341-555c68de/dnsmasq.log",
+    "bytes": 334,
+    "sha256": "a4ef6c6fd101537b530738dcb84410f5d6f6eae7fdafb7910c5a59417dec7e79"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215341-555c68de/dnsperf.log",
+    "bytes": 17036,
+    "sha256": "2b83238883b690f64fde3428518a9ba4dcc4d56e2bb98ad6958a8d8f229bad0d"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215341-555c68de/summary.json",
+    "bytes": 4773,
+    "sha256": "640799787ac636c973fff04252566aaae546e1febd5c257dc20b952230bb73cd"
+  },
+  {
+    "path": "runs/phase-check__xdp__distributed__3000pps__50qps__20261027T215341-555c68de/xdp.bpf.o",
+    "bytes": 35288,
+    "sha256": "023a80d5e0dd29f57ab39dbbe493e621a4591cae7280c0db7fbdcff34dad8ff9"
+  },
+  {
+    "path": "runs/server_cpu_vs_attack_pps.png",
+    "bytes": 72460,
+    "sha256": "9c06c17a564ccbda66a444a4a62bd1c569c9dbf0e3c7b781ef3f59c8fb95483b"
+  },
+  {
+    "path": "runs/success_vs_attack_pps.png",
+    "bytes": 66792,
+    "sha256": "71e4908f9e65d95866b68625bebb4dfcf39ad4119d62eee11fd326d24c37fd16"
+  },
+  {
+    "path": "runs/summary.csv",
+    "bytes": 6971,
+    "sha256": "705d3f2d9660bfd5c1c78c100f644936bd059eedc813914957527fce87c9c021"
+  }
+]
