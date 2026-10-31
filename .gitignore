@@ -1,5 +1,13 @@
 /build/
 *.o
 compile_flags.txt
-/src/tests/core/
-*.core-test
+__pycache__/
+*.pyc
+/src/controller/byteguard
+/src/controller/controller
+.env
+.env.*
+!.env.example
+.venv/
+/reports/.build/
+/.aws/

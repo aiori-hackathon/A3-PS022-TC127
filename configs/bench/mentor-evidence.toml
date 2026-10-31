@@ -1,0 +1,15 @@
+# Capture query/response PCAPs for mentor demonstrations, NOT peak-PPS testing.
+# sudo python3 scripts/bench/harness.py run --config configs/bench/mentor-evidence.toml
+
+[common]
+tag = "mentor-evidence"
+mode = "xdp"
+scenario = "distributed"
+source_count = 1024
+packet_count = 1024
+attack_pps = 3000
+legit_qps = 50
+duration = 10
+seed = 44
+capture = true
+capture_limit = 2500

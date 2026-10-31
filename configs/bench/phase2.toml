@@ -1,0 +1,17 @@
+# 27 fresh experiments: 3 conditions x 3 modes x 3 matched seeded trials.
+# Keep the existing workload recipe and all compiled limiter constants.
+[common]
+tag = "phase2-20261031"
+legit_qps = 50
+legit_clients = 1
+duration = 10
+seed = 44
+packet_count = 1024
+outstanding = 1000
+capture = false
+
+[matrix]
+modes = ["none", "nft", "xdp"]
+scenarios = ["single", "distributed"]
+attack_pps_list = [0, 3000]
+repeats = 3

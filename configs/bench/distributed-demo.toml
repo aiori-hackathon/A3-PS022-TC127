@@ -1,0 +1,17 @@
+# One file for a reproducible comparison. Run with:
+# sudo python3 scripts/bench/harness.py matrix --config configs/bench/distributed-demo.toml
+
+[common]
+tag = "before-tuning"
+legit_qps = 50
+legit_clients = 1
+duration = 10
+seed = 44
+packet_count = 1024
+outstanding = 1000
+
+[matrix]
+modes = ["none", "nft", "xdp"]
+scenarios = ["distributed"]
+attack_pps_list = [0, 3000]
+repeats = 2

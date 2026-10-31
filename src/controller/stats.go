@@ -38,11 +38,16 @@ type Stats struct {
 }
 
 type StatsReader struct {
-	statMap  *ebpf.Map
+	statMap  interface{ Lookup(key, valueOut any) error }
 	cpuCount int
 }
 
 func NewStatsReader(statMap *ebpf.Map) (*StatsReader, error) {
+	if statMap == nil || statMap.Type() != ebpf.PerCPUArray ||
+		statMap.KeySize() != 4 || statMap.ValueSize() != 8 ||
+		statMap.MaxEntries() != statGlobalRefund+1 {
+		return nil, fmt.Errorf("stat_map must be a per-CPU array with 4-byte keys, 8-byte values and %d entries", statGlobalRefund+1)
+	}
 	cpuCount, err := ebpf.PossibleCPU()
 	if err != nil {
 		return nil, fmt.Errorf("get possible CPU count: %w", err)

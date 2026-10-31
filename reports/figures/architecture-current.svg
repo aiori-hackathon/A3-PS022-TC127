@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="451.27559055118115" height="240" preserveAspectRatio="xMinYMin meet" viewBox="0 0 451 240" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="451.27559055118115" height="240"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-240)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="200" width="108" height="40" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="32.8815" y="220.0" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,440) scale(1,-1)">DNS traffic</text>
+			<rect x="113" y="200" width="108" height="40" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="138.632" y="220.0" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,440) scale(1,-1)">Bounded parser</text>
+			<rect x="226" y="200" width="108" height="40" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="246.6235" y="220.0" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,440) scale(1,-1)">Admission control</text>
+			<rect x="339" y="200" width="108" height="40" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="357.63" y="220.0" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,440) scale(1,-1)">Linux / DNS server</text>
+			<path d="M 108,220 L 113,220 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="113 220, 107.5973 222.6098, 107.5973 217.3902" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<path d="M 221,220 L 226,220 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="226 220, 220.5973 222.6098, 220.5973 217.3902" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<path d="M 334,220 L 339,220 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="339 220, 333.5973 222.6098, 333.5973 217.3902" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<text x="305.344" y="183" style="font-family: Serif-Italic; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,366) scale(1,-1)">PASS continues; DROP ends here</text>
+			<rect x="35" y="112" width="160" height="45" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="96.37" y="140.0" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,280) scale(1,-1)">BPF maps</text>
+			<text x="55.006" y="129.0" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,258) scale(1,-1)">Source TAT / global credit / stats</text>
+			<rect x="242" y="112" width="160" height="45" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="297.88" y="140.0" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,280) scale(1,-1)">Go controller</text>
+			<text x="253.7665" y="129.0" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,258) scale(1,-1)">Load, attach, aggregate per-CPU stats</text>
+			<path d="M 280,200 L 280,174 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 280,174 L 115,174 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 115,174 L 115,157 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="115 157, 117.6098 162.4027, 112.3902 162.4027" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<path d="M 195,134 L 242,134 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="242 134, 236.5973 136.6098, 236.5973 131.3902" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<rect x="242" y="46" width="160" height="34" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="266.884" y="63.0" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,126) scale(1,-1)">Prometheus — scrape /metrics</text>
+			<rect x="35" y="46" width="160" height="34" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="52.891000000000005" y="63.0" style="font-family: Serif; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,126) scale(1,-1)">Grafana — provisioned dashboard</text>
+			<path d="M 322,112 L 322,80 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="322 80, 324.6098 85.40268, 319.3902 85.40268" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<path d="M 242,63 L 195,63 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<polygon points="195 63, 200.4027 60.39021, 200.4027 65.60979" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,0%,0%); fill-rule: evenodd;"/>
+			<text x="101.65379527559058" y="16" style="font-family: Serif-Italic; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,32) scale(1,-1)">Client-observed DNS responses are measured separately by dnsperf.</text>
+		</g>
+	</g>
+</svg>

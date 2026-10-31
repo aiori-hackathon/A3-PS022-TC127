@@ -1,0 +1,355 @@
+{
+  "uid": "byteguard-overview",
+  "title": "ByteGuard \u2014 DNS admission control",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "2s",
+  "timezone": "browser",
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "tags": [
+    "byteguard"
+  ],
+  "panels": [
+    {
+      "id": 1,
+      "title": "Recognized DNS queries / second",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "byteguard-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rate(byteguard_dns_queries_total{job=\"byteguard\",instance=~\"$instance\"}[$__rate_interval])",
+          "legendFormat": "Queries"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "XDP admissions and drops / second",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "byteguard-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rate(byteguard_dns_pass_total{job=\"byteguard\",instance=~\"$instance\"}[$__rate_interval])",
+          "legendFormat": "Admitted by XDP"
+        },
+        {
+          "refId": "B",
+          "expr": "rate(byteguard_packet_drops_total{job=\"byteguard\",instance=~\"$instance\"}[$__rate_interval])",
+          "legendFormat": "Dropped by XDP"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      },
+      "description": "XDP admissions are queries passed to the network stack, not successful DNS responses."
+    },
+    {
+      "id": 3,
+      "title": "Per-source limit drops / second",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "byteguard-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rate(byteguard_drop_source_limit_total{job=\"byteguard\",instance=~\"$instance\"}[$__rate_interval])",
+          "legendFormat": "Source limiter"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Global limit drops / second",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "byteguard-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rate(byteguard_drop_global_limit_total{job=\"byteguard\",instance=~\"$instance\"}[$__rate_interval])",
+          "legendFormat": "Global limiter"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Totals since controller start",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "byteguard-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "byteguard_dns_queries_total{job=\"byteguard\",instance=~\"$instance\"}",
+          "legendFormat": "Queries"
+        },
+        {
+          "refId": "B",
+          "expr": "byteguard_dns_pass_total{job=\"byteguard\",instance=~\"$instance\"}",
+          "legendFormat": "XDP admissions"
+        },
+        {
+          "refId": "C",
+          "expr": "byteguard_packet_drops_total{job=\"byteguard\",instance=~\"$instance\"}",
+          "legendFormat": "XDP drops"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      },
+      "description": "Fresh map counters reset on controller restart. No client response-success measurement is exported here."
+    },
+    {
+      "id": 6,
+      "title": "Operational errors / second",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "byteguard-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rate(byteguard_map_errors_total{job=\"byteguard\",instance=~\"$instance\"}[$__rate_interval])",
+          "legendFormat": "Map errors"
+        },
+        {
+          "refId": "B",
+          "expr": "rate(byteguard_drop_internal_error_total{job=\"byteguard\",instance=~\"$instance\"}[$__rate_interval])",
+          "legendFormat": "Internal drops"
+        },
+        {
+          "refId": "C",
+          "expr": "rate(byteguard_drop_source_commit_total{job=\"byteguard\",instance=~\"$instance\"}[$__rate_interval])",
+          "legendFormat": "Source commit drops"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Map events and refund calls / second",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "byteguard-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 24
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rate(byteguard_source_inserts_total{job=\"byteguard\",instance=~\"$instance\"}[$__rate_interval])",
+          "legendFormat": "New sources"
+        },
+        {
+          "refId": "B",
+          "expr": "rate(byteguard_insert_races_total{job=\"byteguard\",instance=~\"$instance\"}[$__rate_interval])",
+          "legendFormat": "Insertion races"
+        },
+        {
+          "refId": "C",
+          "expr": "rate(byteguard_global_refunds_total{job=\"byteguard\",instance=~\"$instance\"}[$__rate_interval])",
+          "legendFormat": "Refund calls"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Controller scrape health",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "byteguard-prometheus"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 24
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "up{job=\"byteguard\",instance=~\"$instance\"}",
+          "legendFormat": "UP"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      },
+      "description": "A failed map read returns HTTP 500 and makes this zero; absence means no matching target was scraped."
+    }
+  ],
+  "templating": {
+    "list": [
+      {
+        "name": "instance",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "byteguard-prometheus"
+        },
+        "query": "label_values(up{job=\"byteguard\"}, instance)",
+        "refresh": 1,
+        "includeAll": false,
+        "multi": false
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "description": "Kernel DNS admission counters. Client-observed success, response latency and CPU measurements come from the benchmark harness, not XDP PASS."
+}
