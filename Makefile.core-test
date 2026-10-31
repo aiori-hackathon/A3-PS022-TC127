@@ -1,0 +1,20 @@
+CORE_TEST_DIR := src/tests/core
+CORE_TEST_BPF := build/xdp_core_test.bpf.o
+CORE_TEST_RUNNER := build/byteguard-core-test
+CORE_TEST_C := $(CORE_TEST_DIR)/runner.c $(CORE_TEST_DIR)/fixture.c $(CORE_TEST_DIR)/packets.c $(CORE_TEST_DIR)/test_cases.c
+
+$(CORE_TEST_BPF): src/xdp/xdp_main.c src/xdp/gcra.h src/xdp/global_bucket.h $(CORE_TEST_DIR)/test_clock.bpf.h $(CORE_TEST_DIR)/test_hooks.bpf.h Makefile Makefile.core-test
+	@mkdir -p build
+	$(CLANG) $(BPF_CFLAGS) $(BPF_INCLUDES) -DBYTEGUARD_TEST -c src/xdp/xdp_main.c -o $@
+
+$(CORE_TEST_RUNNER): $(CORE_TEST_C) $(CORE_TEST_DIR)/fixture.h $(CORE_TEST_DIR)/packets.h $(CORE_TEST_DIR)/test_cases.h
+	@mkdir -p build
+	$(CC) -O2 -g -Wall -Wextra -std=gnu11 -o $@ $(CORE_TEST_C) $(shell pkg-config --cflags --libs libbpf) -pthread
+
+.PHONY: test-core test-core-stress
+
+test-core: $(CORE_TEST_BPF) $(CORE_TEST_RUNNER)
+	$(CORE_TEST_RUNNER) $(CORE_TEST_BPF)
+
+test-core-stress: $(CORE_TEST_BPF) $(CORE_TEST_RUNNER)
+	$(CORE_TEST_RUNNER) --stress --workers $(or $(WORKERS),32) --rounds $(or $(ROUNDS),1) --lru-sources $(or $(LRU_SOURCES),1300) $(CORE_TEST_BPF)
